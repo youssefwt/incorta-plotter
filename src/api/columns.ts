@@ -19,10 +19,10 @@ type ColumnResponse= {
   measures: Measure[];
 }
 // Type guards for distinguishing between Dimension and Measure
-function isDimension(column: Column): column is Dimension {
+export function isDimension(column: Column): column is Dimension {
   return column.function === 'dimension';
 }
-function isMeasure(column: Column): column is Measure {
+export function isMeasure(column: Column): column is Measure {
   return column.function === 'measure';
 }
 
