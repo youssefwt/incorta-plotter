@@ -8,8 +8,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
-      ]
+        "./src/*",
+      ],
+      "components/*":["./src/components/*"],
+      "features/*":["./src/features/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
