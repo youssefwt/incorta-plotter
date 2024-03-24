@@ -1,4 +1,4 @@
-import { useColumns } from "@/api/columns";
+import { Dimension, Measure, useColumns } from "@/api/columns";
 import { Separator } from "components/ui/separator";
 import ColumnItem from "./ColumnItem";
 
@@ -16,7 +16,7 @@ const SideMenu = () => {
           ))}
         {!!data &&
           data.dimensions.map((dim) => (
-            <ColumnItem key={dim.name} item={dim} />
+            <ColumnItem<Dimension> key={dim.name} item={dim} />
           ))}
       </div>
       <Separator />
@@ -28,7 +28,9 @@ const SideMenu = () => {
             <p className="h-8 animate-pulse bg-accent" key={el}></p>
           ))}
         {!!data &&
-          data.measures.map((m) => <ColumnItem key={m.name} item={m} />)}
+          data.measures.map((m) => (
+            <ColumnItem<Measure> key={m.name} item={m} />
+          ))}
       </div>
     </div>
   );

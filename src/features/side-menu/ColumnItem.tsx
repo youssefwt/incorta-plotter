@@ -1,6 +1,12 @@
-import { Column } from "@/api/columns";
+import { Column, Dimension, Measure } from "@/api/columns";
 
-const ColumnItem = ({ item }: { item: Column }) => {
+type ComponentProps<T extends Measure | Dimension> = {
+  item: T;
+};
+
+const ColumnItem = <T extends Measure | Dimension>({
+  item,
+}: ComponentProps<T>) => {
   return (
     <p
       draggable
