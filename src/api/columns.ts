@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 
-type Column= {
+export type Column= {
   name: string;
   function: string;
 }

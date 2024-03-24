@@ -1,8 +1,9 @@
 import { useColumns } from "@/api/columns";
 import { Separator } from "components/ui/separator";
+import ColumnItem from "./ColumnItem";
 
 const SideMenu = () => {
-  const { data, isLoading, isFetching } = useColumns();
+  const { data, isLoading, isFetching, isError, error } = useColumns();
   console.log(data);
   const loading = isLoading || isFetching;
   return (
@@ -16,13 +17,7 @@ const SideMenu = () => {
           ))}
         {!!data &&
           data.dimensions.map((dim) => (
-            <p
-              draggable
-              className="cursor-move py-1 hover:bg-accent/80"
-              key={dim.name}
-            >
-              {dim.name}
-            </p>
+            <ColumnItem key={dim.name} item={dim} />
           ))}
       </div>
       <Separator />
@@ -34,15 +29,7 @@ const SideMenu = () => {
             <p className="h-8 animate-pulse bg-accent" key={el}></p>
           ))}
         {!!data &&
-          data.measures.map((m) => (
-            <p
-              draggable
-              className="cursor-move py-1 hover:bg-accent/80"
-              key={m.name}
-            >
-              {m.name}
-            </p>
-          ))}
+          data.measures.map((m) => <ColumnItem key={m.name} item={m} />)}
       </div>
     </div>
   );
