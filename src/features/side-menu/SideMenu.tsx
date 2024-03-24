@@ -4,7 +4,6 @@ import ColumnItem from "./ColumnItem";
 
 const SideMenu = () => {
   const { data, isLoading, isFetching } = useColumns();
-  console.log(data);
   const loading = isLoading || isFetching;
   return (
     <div className="space-y-4">

@@ -3,7 +3,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 export type Column= {
   name: string;
-  function: string;
+  function: "dimension"|"measure";
 }
 
 type ColumnResponse= {

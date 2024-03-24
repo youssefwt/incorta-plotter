@@ -1,5 +1,11 @@
+import DimensionDrop from "./DimensionDrop";
+
 const Plotter = () => {
-  return <div>Plotter</div>;
+  return (
+    <div>
+      <DimensionDrop />
+    </div>
+  );
 };
 
 export default Plotter;
