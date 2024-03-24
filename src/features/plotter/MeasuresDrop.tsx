@@ -16,7 +16,6 @@ const MeasuresDrop = () => {
     e.preventDefault();
   }
   function handleDrop(e: DragEvent<HTMLDivElement>) {
-    console.log("drop", e);
     if (isMeasure(draggedColumn!)) addMeasure(draggedColumn);
     setDraggedColumn(null);
   }
@@ -29,10 +28,13 @@ const MeasuresDrop = () => {
         onDrop={handleDrop}
         className="flex w-full justify-between rounded-md border-2 border-black"
       >
-        <div className="flex items-center gap-3 px-2">
+        <div className="flex items-center gap-3 overflow-x-auto px-2">
           {!!measures.length &&
             measures.map((m) => (
-              <p className="flex items-center gap-2 rounded-md border border-slate-500 px-2 text-lg">
+              <p
+                key={m.name}
+                className="flex items-center gap-2 rounded-md border border-slate-500 px-2 text-lg"
+              >
                 {m?.name}{" "}
                 <X
                   onClick={() => deleteMeasure(m)}

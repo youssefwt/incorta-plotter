@@ -10,12 +10,10 @@ const DimensionDrop = () => {
   const draggedColumn = useStore((store) => store.draggedColumn);
   const setDraggedColumn = useStore((store) => store.setDraggedColumn);
 
-  console.log("dimesnion", dimension);
   function handleDragOver(e: DragEvent<HTMLDivElement>) {
     e.preventDefault();
   }
   function handleDrop(e: DragEvent<HTMLDivElement>) {
-    console.log("drop", e);
     if (isDimension(draggedColumn!)) addDimension(draggedColumn);
     setDraggedColumn(null);
   }
