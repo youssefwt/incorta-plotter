@@ -11,7 +11,8 @@
         "./src/*",
       ],
       "components/*":["./src/components/*"],
-      "features/*":["./src/features/*"]
+      "features/*":["./src/features/*"],
+      "api/*":["./src/api/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",

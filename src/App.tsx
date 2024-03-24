@@ -1,6 +1,6 @@
-import SideMenu from "features/SideMenu";
+import SideMenu from "@/features/side-menu/SideMenu";
 import { Separator } from "components/ui/separator";
-import Plotter from "features/Plotter";
+import Plotter from "@/features/plotter/Plotter";
 
 function App() {
   return (
