@@ -5,10 +5,25 @@ export type Column= {
   name: string;
   function: "dimension"|"measure";
 }
+export type Dimension={
+  name: string;
+  function: "dimension";
+}
+export type Measure={
+  name: string;
+  function: "measure";
+}
 
 type ColumnResponse= {
-  dimensions: Column[];
-  measures: Column[];
+  dimensions: Dimension[];
+  measures: Measure[];
+}
+// Type guards for distinguishing between Dimension and Measure
+function isDimension(column: Column): column is Dimension {
+  return column.function === 'dimension';
+}
+function isMeasure(column: Column): column is Measure {
+  return column.function === 'measure';
 }
 
 async function fetchColumns(): Promise<ColumnResponse> {
@@ -19,12 +34,12 @@ async function fetchColumns(): Promise<ColumnResponse> {
   const data = await response.json();
 
   // Separate dimensions and measures
-  const dimensions: Column[] = [];
-  const measures: Column[] = [];
+  const dimensions: Dimension[] = [];
+  const measures: Measure[] = [];
   data.columns.forEach((column: Column) => {
-    if (column.function === 'dimension') {
+    if (isDimension(column)) {
       dimensions.push(column);
-    } else if (column.function === 'measure') {
+    } else if (isMeasure(column)) {
       measures.push(column);
     }
   });

@@ -1,8 +1,6 @@
-import { Column } from '@/api/columns'
+import { Dimension, Measure } from '@/api/columns'
 import { create } from 'zustand'
 
-type Dimension=Column&{function:"dimension"}
-type Measure=(Column&{function:"measure"})
 
 type StoreState = {
   dimension: Dimension|null,
