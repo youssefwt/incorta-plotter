@@ -1,12 +1,5 @@
-
 function App() {
-
-
-  return (
-    <>
-      init commit
-    </>
-  )
+  return <main className="flex h-dvh">plotter</main>;
 }
 
-export default App
+export default App;
