@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { useToast } from "@/components/ui/use-toast";
 
 export type Column= {
   name: string;
@@ -32,5 +33,11 @@ async function fetchColumns(): Promise<ColumnResponse> {
 }
 
 export function useColumns() {
-  return useQuery<ColumnResponse, Error>('columns', fetchColumns);
+  const { toast } = useToast();
+
+  return useQuery<ColumnResponse, Error>('columns', fetchColumns,{
+    onError: error => {
+        toast({variant: "destructive",title:"Error fetching columns, please try again"});
+    }
+  });
 }

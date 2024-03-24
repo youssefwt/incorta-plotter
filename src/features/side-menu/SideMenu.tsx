@@ -3,7 +3,7 @@ import { Separator } from "components/ui/separator";
 import ColumnItem from "./ColumnItem";
 
 const SideMenu = () => {
-  const { data, isLoading, isFetching, isError, error } = useColumns();
+  const { data, isLoading, isFetching } = useColumns();
   console.log(data);
   const loading = isLoading || isFetching;
   return (
