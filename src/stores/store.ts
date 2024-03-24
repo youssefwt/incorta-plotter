@@ -8,6 +8,8 @@ type StoreState = {
   addDimension:(dimensionToAdd:Dimension) => void,
   addMeasure:(measureToAdd:Measure) => void,
   clearDimension:() => void,
+  draggedColumn:Dimension|Measure|null,
+  setDraggedColumn:(draggedColumn:Dimension|Measure|null) => void,
 }
 
 export const useStore = create<StoreState>()((set) => ({
@@ -16,4 +18,6 @@ export const useStore = create<StoreState>()((set) => ({
   addDimension:(dimension)=>set(state=>({...state,dimension})),
   clearDimension:()=>set(state=>({...state,dimension:null})),
   addMeasure:(measure)=>set(state=>({...state,measures:[...state.measures,measure]})),
+  draggedColumn:null,
+  setDraggedColumn:(draggedColumn)=>set(state=>({...state,draggedColumn}))
 }))

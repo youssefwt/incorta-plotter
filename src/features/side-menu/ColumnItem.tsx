@@ -1,6 +1,8 @@
 import { Dimension, Measure, isDimension, isMeasure } from "@/api/columns";
+import { cn } from "@/lib/utils";
 import { useStore } from "@/stores/store";
 import { Check } from "lucide-react";
+import { DragEvent } from "react";
 
 type ComponentProps<T extends Measure | Dimension> = {
   item: T;
@@ -11,7 +13,12 @@ const ColumnItem = <T extends Measure | Dimension>({
 }: ComponentProps<T>) => {
   const storeDimension = useStore((store) => store.dimension);
   const storeMeasures = useStore((store) => store.measures);
-  let matchItem;
+  const setDraggedColumn = useStore((store) => store.setDraggedColumn);
+  let matchItem: boolean | undefined;
+
+  function handleDragStart() {
+    setDraggedColumn(item);
+  }
 
   if (isDimension(item)) {
     storeDimension?.name === item.name
@@ -23,8 +30,12 @@ const ColumnItem = <T extends Measure | Dimension>({
   return (
     <div className="flex items-center justify-between">
       <p
-        draggable
-        className="flex-1 cursor-grab py-1 hover:bg-accent/80 active:cursor-grabbing"
+        onDragStart={handleDragStart}
+        draggable={!matchItem}
+        className={cn(
+          "flex-1  py-1 hover:bg-accent/80 ",
+          !matchItem && "cursor-grab active:cursor-grabbing",
+        )}
       >
         {item.name}
       </p>
