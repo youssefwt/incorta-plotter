@@ -1,18 +1,18 @@
 # Plotter
 
-this app help customers discover all the columns available in a datasource. And based on their business need, draw a line-chart of one or more measures in correspondence to a dimension.
+this app help customers discover all the columns available in a data source. And based on their business need, draw a line-chart of one or more measures in correspondence to a dimension.
 
 ## Features
 
 1. **Choose a dmiension**: Drag a dimension column to the “Dimension” box.
 
-2. **Choose one or more measures**: Drag one or more measuers to the “Measures” box.
+2. **Choose one or more measures**: Drag one or more measures to the “Measures” box.
 
 3. **Clearing boxes**: User can clear all dimensions and measures at once.
 
-4. **Selectivly remove measures**: User can selectivly remove specific measures.
+4. **Selectivly remove measures**: User can selectively remove specific measures.
 
-5. **Value tooltip**: When hovering on the data-points,a tooltip displayes the values at that point.
+5. **Value tooltip**: When hovering on the data-points,a tooltip displays the values at that point.
 
 ## Getting Started
 
