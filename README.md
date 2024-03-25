@@ -33,6 +33,7 @@ To get started with Plotter:
    ```
 
 3. **Run the Application**:
+
    Build the app:
 
    ```
