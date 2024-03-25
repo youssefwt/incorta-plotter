@@ -2,7 +2,6 @@ import { Dimension, Measure, isDimension, isMeasure } from "@/api/columns";
 import { cn } from "@/lib/utils";
 import { useStore } from "@/stores/store";
 import { Check } from "lucide-react";
-import { DragEvent } from "react";
 
 type ComponentProps<T extends Measure | Dimension> = {
   item: T;

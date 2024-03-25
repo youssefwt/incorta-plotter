@@ -51,7 +51,7 @@ export function useColumns() {
   const { toast } = useToast();
 
   return useQuery<ColumnResponse, Error>('columns', fetchColumns,{
-    onError: error => {
+    onError: (_error) => {
         toast({variant: "destructive",title:"Error fetching columns, please try again"});
     }
   });

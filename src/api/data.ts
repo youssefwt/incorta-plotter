@@ -51,7 +51,7 @@ export function useData(dimension: string | undefined, measures: string[]) {
     const { toast } = useToast();
     return useQuery<AnalysisData[] , Error>([dimension, measures], () =>  fetchData(dimension!, measures) , {
         enabled: !!dimension && !!measures.length,
-        onError: error => {
+        onError: (_error) => {
             toast({ variant: "destructive", title: "Error fetching data, please try again" });
         }
     });

@@ -13,7 +13,7 @@ const DimensionDrop = () => {
   function handleDragOver(e: DragEvent<HTMLDivElement>) {
     e.preventDefault();
   }
-  function handleDrop(e: DragEvent<HTMLDivElement>) {
+  function handleDrop() {
     if (isDimension(draggedColumn!)) addDimension(draggedColumn);
     setDraggedColumn(null);
   }

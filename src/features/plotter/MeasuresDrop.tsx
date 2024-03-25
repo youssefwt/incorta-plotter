@@ -15,7 +15,7 @@ const MeasuresDrop = () => {
   function handleDragOver(e: DragEvent<HTMLDivElement>) {
     e.preventDefault();
   }
-  function handleDrop(e: DragEvent<HTMLDivElement>) {
+  function handleDrop() {
     if (isMeasure(draggedColumn!)) addMeasure(draggedColumn);
     setDraggedColumn(null);
   }
