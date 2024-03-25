@@ -22,9 +22,7 @@ const PlotChart = () => {
   const dimension = useStore((store) => store.dimension?.name);
   const storeMeasures = useStore((store) => store.measures);
   const measures = storeMeasures.map((m) => m.name);
-  console.log(measures);
   const { data } = useData(dimension, measures);
-  console.log("data", data);
   return (
     <>
       {data && (
@@ -51,9 +49,6 @@ const PlotChart = () => {
                 activeDot={{ r: 8 }}
               />
             ))}
-
-            {/* <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-      <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
           </LineChart>
         </ResponsiveContainer>
       )}
