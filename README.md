@@ -57,6 +57,7 @@ To get started with Plotter:
 3. Shadcn Ui
 4. React query (tanStack query)
 5. Reacharts
+6. Zustand
 
 ## Contributing
 
