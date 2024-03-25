@@ -4,13 +4,13 @@ this app help customers discover all the columns available in a data source. And
 
 ## Features
 
-1. **Choose a dmiension**: Drag a dimension column to the “Dimension” box.
+1. **Choose a dimension**: Drag a dimension column to the “Dimension” box.
 
 2. **Choose one or more measures**: Drag one or more measures to the “Measures” box.
 
 3. **Clearing boxes**: User can clear all dimensions and measures at once.
 
-4. **Selectivly remove measures**: User can selectively remove specific measures.
+4. **Selectively remove measures**: User can selectively remove specific measures.
 
 5. **Value tooltip**: When hovering on the data-points,a tooltip displays the values at that point.
 
