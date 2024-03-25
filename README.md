@@ -1,30 +1,68 @@
-# React + TypeScript + Vite
+# Plotter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+this app help customers discover all the columns available in a datasource. And based on their business need, draw a line-chart of one or more measures in correspondence to a dimension.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Choose a dmiension**: Drag a dimension column to the “Dimension” box.
 
-## Expanding the ESLint configuration
+2. **Choose one or more measures**: Drag one or more measuers to the “Measures” box.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+3. **Clearing boxes**: User can clear all dimensions and measures at once.
 
-- Configure the top-level `parserOptions` property like this:
+4. **Selectivly remove measures**: User can selectivly remove specific measures.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+5. **Value tooltip**: When hovering on the data-points,a tooltip displayes the values at that point.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Getting Started
+
+To get started with Plotter:
+
+1. **Fork or Clone the Repository**:
+
+   ```
+   git clone https://github.com/youssefwt/incorta-plotter.git
+   ```
+
+2. **Install Dependencies**:
+
+   Inside the cloned directory, run:
+
+   ```
+   npm install
+   ```
+
+3. **Run the Application**:
+   Build the app:
+
+   ```
+   npm run build
+   ```
+
+   Start the build server:
+
+   ```
+   npm run preview
+   ```
+
+   The application will be available at `http://localhost:4173`.
+
+4. **Enjoy the data**!
+
+## Packages used
+
+1. React.js
+2. TailwindCss
+3. Shadcn Ui
+4. React query (tanStack query)
+5. Reacharts
+
+## Contributing
+
+Contributions to Plotter are always welcome, whether it be improvements to the documentation or new functionalities. Please feel free to fork the repository and submit pull requests.
+
+## Contact
+
+For any queries or suggestions, please open an issue on the GitHub repository or contact the maintainers directly.
+
+---
