@@ -22,7 +22,13 @@ const PlotChart = () => {
   const dimension = useStore((store) => store.dimension?.name);
   const storeMeasures = useStore((store) => store.measures);
   const measures = storeMeasures.map((m) => m.name);
-  const { data } = useData(dimension, measures);
+  const { data, isLoading } = useData(dimension, measures);
+  if (isLoading) {
+    return (
+      <div className="m-24 h-full w-11/12 animate-pulse border-muted bg-muted "></div>
+    );
+  }
+
   return (
     <>
       {data && (
@@ -42,6 +48,7 @@ const PlotChart = () => {
             <Legend />
             {measures.map((m) => (
               <Line
+                k={m}
                 strokeWidth={2}
                 type="monotone"
                 dataKey={m}
