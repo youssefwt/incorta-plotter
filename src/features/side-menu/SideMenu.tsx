@@ -8,6 +8,22 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Info } from "lucide-react";
+
+function ColumnTooltip({ content }: { content: string }) {
+  return (
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Info size={20} color="grey" />
+        </TooltipTrigger>
+        <TooltipContent align="start">
+          <p>{content}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+}
+
 const SideMenu = () => {
   const { data, isLoading, isFetching } = useColumns();
   const loading = isLoading || isFetching;
@@ -16,16 +32,7 @@ const SideMenu = () => {
       <div className="space-y-1">
         <div className="flex items-center gap-5">
           <h4 className="text-lg underline">Dimensions</h4>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Info size={20} color="grey" />
-              </TooltipTrigger>
-              <TooltipContent align="start">
-                <p>Drag one dimension</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <ColumnTooltip content="Drag one dimension" />
         </div>
         {!!loading &&
           !data &&
@@ -41,16 +48,7 @@ const SideMenu = () => {
       <div className="space-y-1">
         <div className="flex items-center gap-5">
           <h4 className="text-lg underline">Measures</h4>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Info size={20} color="grey" />
-              </TooltipTrigger>
-              <TooltipContent align="start">
-                <p>Drag one or more measures</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <ColumnTooltip content="Drag one or more measures" />
         </div>
         {!!loading &&
           !data &&
